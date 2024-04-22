@@ -1,17 +1,47 @@
+// atv-3\Conta.java
+
 import java.util.Objects;
 
 public class Conta {
 
-  private String numero;
-  private double saldo;
-  private String cliente;
+  String numero;
+  Double saldo;
+  String cliente;
 
-  public Conta() {}
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+      return false;
+    }
+    Conta outraConta = (Conta) obj;
+    return Objects.equals(numero, outraConta.numero);
+  }
 
-  public Conta(String numero, double saldo, String cliente) {
+  public String getNumero() {
+    return numero;
+  }
+
+  public void setNumero(String numero) {
     this.numero = numero;
-    this.saldo = saldo;
+  }
+
+  public String getCliente() {
+    return cliente;
+  }
+
+  public void setCliente(String cliente) {
     this.cliente = cliente;
+  }
+
+  public Double getSaldo() {
+    return saldo;
+  }
+
+  public void setSaldo(Double saldo) {
+    this.saldo = saldo;
   }
 
   public void depositar(double valor) {
@@ -32,39 +62,7 @@ public class Conta {
     }
   }
 
-  public String getNumero() {
-    return numero;
-  }
-
-  public void setNumero(String numero) {
-    this.numero = numero;
-  }
-
-  public double getSaldo() {
-    return saldo;
-  }
-
   public void setSaldo(double saldo) {
     this.saldo = saldo;
-  }
-
-  public String getCliente() {
-    return cliente;
-  }
-
-  public void setCliente(String cliente) {
-    this.cliente = cliente;
-  }
-
-  @Override
-  public boolean equals(Object obj) {
-    if (this == obj) {
-      return true;
-    }
-    if (obj == null || getClass() != obj.getClass()) {
-      return false;
-    }
-    Conta outraConta = (Conta) obj;
-    return Objects.equals(numero, outraConta.numero);
   }
 }

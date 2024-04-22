@@ -1,3 +1,5 @@
+// atv-3\Banco.java
+
 import java.util.ArrayList;
 
 public class Banco {
@@ -5,7 +7,7 @@ public class Banco {
   private ArrayList<Conta> contas;
 
   public Banco() {
-    contas = new ArrayList<>();
+    contas = new ArrayList<Conta>();
   }
 
   public void adicionarConta(Conta conta) {
@@ -34,6 +36,7 @@ public class Banco {
     }
   }
 
+  // Método para buscar uma conta pelo número
   public Conta buscarContaPorNumero(String numeroConta) throws Exception {
     for (Conta conta : contas) {
       if (conta.getNumero().equals(numeroConta)) {
@@ -43,6 +46,7 @@ public class Banco {
     throw new Exception("Conta com número " + numeroConta + " não encontrada.");
   }
 
+  // Método para buscar uma conta pelo objeto Conta
   public Conta buscarConta(Conta c) throws Exception {
     for (Conta conta : contas) {
       if (conta.equals(c)) {

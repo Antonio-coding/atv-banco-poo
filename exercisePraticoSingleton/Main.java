@@ -2,7 +2,7 @@
 
 package exercisePraticoSingleton;
 
-import exercisePraticoSingleton.DataAccess; // Assuming the package name is correct
+import exercisePraticoSingleton.DataAccess;
 import java.sql.SQLException;
 
 public class Main {
@@ -10,12 +10,12 @@ public class Main {
   public static void main(String[] args) {
     try {
       DataAccess dataAccess = new DataAccess();
-      dataAccess.retrieveData(); // Perform data retrieval operation
+      dataAccess.retrieveData();
     } catch (SQLException e) {
       e.printStackTrace();
     } finally {
       try {
-        dataAccess.closeConnection(); // Close the connection
+        dataAccess.closeConnection();
       } catch (SQLException e) {
         e.printStackTrace();
       }

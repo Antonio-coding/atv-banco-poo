@@ -18,14 +18,13 @@ public class DataAccess {
 
   public void retrieveData() throws SQLException {
     Statement statement = connection.createStatement();
-    String query = "SELECT * FROM your_table_name"; // Replace with your actual table name
+    String query = "SELECT * FROM nome_da_tabela";
     ResultSet resultSet = statement.executeQuery(query);
 
     while (resultSet.next()) {
-      // Extract data from the result set and process it
       int id = resultSet.getInt("id");
       String name = resultSet.getString("name");
-      // ... (Process other columns as needed)
+
       System.out.println("Retrieved Data: ID = " + id + ", Name = " + name);
     }
 
